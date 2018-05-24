@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>无标题文档</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+    function scrollToId(containerId, elementId) {
+        $("#" + containerId).scrollTop($("#" + elementId).position().top + $("#" + containerId).scrollTop());
+    }
+
+    function scrollToText(containerId, word) {
+        var node = $("#" + containerId + " :contains('" + word + "')");
+        if (node.length > 0) {
+            var container = $("#" + containerId);
+            container.animate({
+                scrollTop: container.scrollTop() + node.position().top
+            }, 500);
+        }
+    }
+</script>
+<body>
+
+
+<button onclick="scrollToId('container','test1')">test1</button>
+<button onclick="scrollToId('container','test2')">test2</button>
+<button onclick="scrollToText('container','test3')">test33</button>
+<button onclick="scrollToText('container','test4')">test4</button>
+<button onclick="scrollToText('container','test5')">test5</button>
+<p>dfsdfsdfs</p>
+<p>dfsdfsdfs</p>
+<p>dfsdfsdfs</p>
+<p>dfsdfsdfs</p>
+<div id="container"
+     style="width:430px;height:300px;background:#0000FF;overflow:auto;border:1px solid;position: absolute;">
+    <div id="test1" style="width:400px;height:300px;background:#FFFFFF">test1</div>
+    <div id="test2" style="width:400px;height:300px;background:#00FF00">test2</div>
+    <div id="test3" style="width:400px;height:300px;background:#FFFFFF">test33</div>
+    <div id="test4" style="width:400px;height:300px;background:#00FF00">test44</div>
+    <div id="test5" style="width:400px;height:300px;background:#FFFFFF">test55</div>
+</div>
+
+</body>
+</html>
