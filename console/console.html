@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>looptest</title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="console.js"></script>
+</head>
+<body>
+<style>
+    div.container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    div.north {
+        padding-left: 10px;
+        background: lightblue;
+        position: absolute;
+        height: 40px;
+        right: 0;
+        left: 0;
+    }
+
+    div.south {
+        padding-left: 10px;
+        background: lightblue;
+        position: absolute;
+        height: 20px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+    }
+
+    div.middle {
+        border: 1px solid gray;
+        position: absolute;
+        top: 40px;
+        bottom: 20px;
+        left: 10px;
+        right: 10px;
+        min-width: 300px;
+
+    }
+
+    table {
+        border: solid 1px gray;
+    }
+
+    td {
+        overflow-y: scroll;
+        border: solid 1px gray;
+    }
+</style>
+<div class="container">
+
+    <div class="middle">
+        <table style="width: 100%;height: 100%;">
+            <tr style="width: 100%;height: 100%;">
+                <td style="width: 50%;height: 100%;vertical-align: top">
+                    <div style="width: 100%;height: 100%;overflow: auto">
+                        <div>
+                            test
+                            <button onclick="test()">提交</button>
+                            <br>
+                            <form id="test1">
+                                t1:<input name="t1"><br>
+                                t2:<input name="t2">
+                            </form>
+                        </div>
+                        <hr>
+                        <div>
+                            test
+                            <button onclick="test()">提交</button>
+                            <br>
+                        </div>
+                        <hr>
+                    </div>
+                </td>
+                <td style="border:solid 1px gray;width: 50%;height: 100%;vertical-align: top">
+                    <span>console</span><br>
+                    <textarea id="console"
+                              style="height: calc(100% - 30px);width: calc(100% - 10px)">这里是控制台输出</textarea>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="north">loop控制台</div>
+    <div class="south">XXXX</div>
+</div>
+</body>
+</html>
